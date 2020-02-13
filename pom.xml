@@ -270,6 +270,18 @@
             </plugin> -->
         </plugins>
     </build>
+	<distributionManagement>
+	    <repository>
+	      <id>nexus</id>
+	      <name>Nexus Repository</name>
+	      <url>http://52.53.225.52:8081/repository/mt-releases/</url>
+	    </repository>
+	    <snapshotRepository>
+	      <id>nexus</id>
+	      <name>Snapshot Nexus Repository </name>
+	      <url>http://52.53.225.52:8081/repository/mt-snapshots/</url>
+	    </snapshotRepository>
+	</distributionManagement>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
