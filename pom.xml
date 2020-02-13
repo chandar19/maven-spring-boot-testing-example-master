@@ -15,7 +15,8 @@
         <start-class>example.spring.bootapp.Application</start-class>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>${target.jdk}</java.version>
+        <java.version>${target.jdk}</java.version>  
+	<sonar.host.url>http://52.53.183.74:9000/</sonar.host.url>
     </properties>
     <profiles>
         <profile>
