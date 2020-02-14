@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>example.spring</groupId>
     <artifactId>maven-spring-boot-testing-example</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0-SNAPSHOT</version>
     <name>Maven Spring Boot Testing Example</name>
     <packaging>war</packaging>
     <properties>
