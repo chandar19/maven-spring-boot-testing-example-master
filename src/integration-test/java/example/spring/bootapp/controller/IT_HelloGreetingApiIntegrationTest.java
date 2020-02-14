@@ -11,7 +11,7 @@ public class IT_HelloGreetingApiIntegrationTest extends IntegrationTestBase
     @Test
     public void integrationTestHelloGreeting()
     {
-        testUrl = getURLFromString("http://" + hostName + ":" + tomcatPort + "/" + contextPath + "/hello");
+        testUrl = getURLFromString("http://" + hostName + ":" + "8080" + "/" + contextPath + "/hello");
 
         String greetingMessage = with().header(new Header("Content-Type", "application/json; charset=UTF-8"))
                 .expect().log().all()
