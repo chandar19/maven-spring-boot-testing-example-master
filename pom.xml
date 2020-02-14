@@ -105,8 +105,8 @@
                                 </goals>
                                 <configuration>
                                     <arguments>
-                                      <!--  <argument>--server.port=${tomcat.http.port}</argument> -->
-					    <argument>--server.port=8080</argument>
+                                      <!--<argument>--server.port=${tomcat.http.port}</argument>-->
+					    <argument>--server.port=$8080</argument>
                                     </arguments>
                                     <!-- <jvmArguments>-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005</jvmArguments> -->
                                 </configuration>
