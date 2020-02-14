@@ -11,8 +11,8 @@ public class IT_IndexGreetingApiIntegrationTest extends IntegrationTestBase
     @Test
     public void integrationTestIndexGreeting()
     {
-        testUrl = getURLFromString("http://" + hostName + ":" + tomcatPort + "/" + contextPath + "/index");
-
+        //testUrl = getURLFromString("http://" + hostName + ":" + tomcatPort + "/" + contextPath + "/index");
+testUrl = getURLFromString("http://" + hostName + ":" + "8080" + "/" + contextPath + "/index");
         String greetingMessage = with().header(new Header("Content-Type", "application/json; charset=UTF-8"))
                 .expect().log().all()
                 .when().get(testUrl.toString())
