@@ -9,8 +9,8 @@
     <properties>
         <target.jdk>1.7</target.jdk>
         <surefire.version>2.19</surefire.version>
-        <tomcat.host.name>localhost</tomcat.host.name>
-        <tomcat.version>7.0.52</tomcat.version>
+        <tomcat.host.name>13.52.241.8</tomcat.host.name>
+        <tomcat.version>9.0.30</tomcat.version>
         <servlet-api.version>3.1.0</servlet-api.version>
         <start-class>example.spring.bootapp.Application</start-class>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
