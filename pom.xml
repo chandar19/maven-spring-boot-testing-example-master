@@ -9,7 +9,8 @@
     <properties>
         <target.jdk>1.7</target.jdk>
         <surefire.version>2.19</surefire.version>
-        <tomcat.host.name>13.52.241.8</tomcat.host.name>
+        <tomcat.host.name>localhost</tomcat.host.name>
+	<!--    <tomcat.host.name>13.52.241.8</tomcat.host.name> <>!-->
         <tomcat.version>7.0.52</tomcat.version>
         <servlet-api.version>3.1.0</servlet-api.version>
         <start-class>example.spring.bootapp.Application</start-class>
@@ -104,7 +105,8 @@
                                 </goals>
                                 <configuration>
                                     <arguments>
-                                        <argument>--server.port=${tomcat.http.port}</argument>
+                                      <!--  <argument>--server.port=${tomcat.http.port}</argument> -->
+					    <argument>--server.port=8080</argument>
                                     </arguments>
                                     <!-- <jvmArguments>-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005</jvmArguments> -->
                                 </configuration>
