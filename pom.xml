@@ -8,7 +8,8 @@
     <packaging>war</packaging>
     <properties>
         <target.jdk>1.7</target.jdk>
-        <surefire.version>2.19</surefire.version>
+       <!-- <surefire.version>2.19</surefire.version> -->
+	 <surefire.version>3.0.0-M1</surefire.version>
         <tomcat.host.name>localhost</tomcat.host.name>
 	<!--<tomcat.host.name>13.52.241.8</tomcat.host.name> -->
 	<!-- <my.tomcat.port>8080</my.tomcat.port> -->
