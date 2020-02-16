@@ -1,2 +1,4 @@
 .idea/
+target/
+.DS_Store
 maven-spring-boot-testing-example.iml
