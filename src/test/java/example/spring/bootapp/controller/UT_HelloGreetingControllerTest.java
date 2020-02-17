@@ -38,7 +38,7 @@ public class UT_HelloGreetingControllerTest
             .andDo(MockMvcResultHandlers.print())
             .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON))
-            .andExpect(MockMvcResultMatchers.content().string(StringContains.containsString("Hello Greeting chan!!")));
+            .andExpect(MockMvcResultMatchers.content().string(StringContains.containsString("Hello Greeting!!")));
     }
 
 }
