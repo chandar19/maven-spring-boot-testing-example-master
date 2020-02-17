@@ -11,6 +11,7 @@ public class IT_HelloGreetingApiIntegrationTest extends IntegrationTestBase
     @Test
     public void integrationTestHelloGreeting()
     {
+        System.out.println("Integration test chander");
         testUrl = getURLFromString("http://" + hostName + ":" + tomcatPort  + "/hello");
 
         String greetingMessage = with().header(new Header("Content-Type", "application/json; charset=UTF-8"))
@@ -18,6 +19,7 @@ public class IT_HelloGreetingApiIntegrationTest extends IntegrationTestBase
                 .when().get(testUrl.toString())
                 .then().statusCode(200)
                 .extract().path("greeting");
+                
 
         Assert.assertEquals(greetingMessage, "Hello Greeting!!");
     }
