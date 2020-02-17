@@ -33,6 +33,7 @@ public class UT_HelloGreetingControllerTest
 
     @Test
     public void helloWorldControllerTest() throws Exception {
+        System.out.println("Unit test chander");
         mockMvc.perform(MockMvcRequestBuilders.get("/hello").accept(MediaType.APPLICATION_JSON))
             .andDo(MockMvcResultHandlers.print())
             .andExpect(MockMvcResultMatchers.status().isOk())
