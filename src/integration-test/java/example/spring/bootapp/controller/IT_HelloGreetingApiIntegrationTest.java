@@ -16,7 +16,7 @@ public class IT_HelloGreetingApiIntegrationTest extends IntegrationTestBase
         String greetingMessage = with().header(new Header("Content-Type", "application/json; charset=UTF-8"))
                 .expect().log().all()
                 .when().get(testUrl.toString())
-                .then().statusCode(200)
+                .then().statusCode(201)
                 .extract().path("greeting");
 
         Assert.assertEquals(greetingMessage, "Hello Greeting!!");
