@@ -1,0 +1,52 @@
+node('master')
+{
+    try{
+    def MavenHome = tool name: 'Maven-3.6.1', type:'maven'
+
+    stage('CheckoutCode'){
+        git credentialsId: 'GIT_CREDENTIALS', url: 'https://github.com/chandar19/maven-spring-boot-testing-example-master.git'
+        }
+    stage('Build')
+	    {
+	    sh "${MavenHome}/bin/mvn clean compile"
+	    }
+	stage('UnitTest')
+		{
+		sh "${MavenHome}/bin/mvn clean verify -Pdev"
+		}
+		
+	stage('Package')
+	    {
+	    sh "${MavenHome}/bin/mvn clean package"
+	    }	
+    stage('UploadArtifact')
+    	{
+    	sh "${MavenHome}/bin/mvn deploy"
+    	}
+	stage('DeployApplication')
+		{
+		sshagent(['95fa9151-1930-49ac-a095-a5581e9d067d'])
+		{
+		sh "scp -o StrictHostKeyChecking=no /var/lib/jenkins/.m2/repository/example/spring/maven-spring-boot-testing-example/1-SNAPSHOT/maven-spring-boot-testing-example-1-SNAPSHOT.war ec2-user@13.52.241.8:/opt/apache-tomcat-9.0.30/webapps/maven-spring-boot-testing-example.war"
+		}
+		}
+		stage('IntegrationTest')
+		{
+		sh "${MavenHome}/bin/mvn clean verify -Pintegration-test"
+		}
+		/*stage('EmailNotification')
+			{
+			emailext body: 'Build is completed.please check logs.', subject: 'Build done- feb', to: 'chandertrainingusa@gmail.com'
+			}
+			*/
+    }catch (Exception err){
+        emailext body: "Build STATUS .Job ${env.JOB_NAME} link ${env.BUILD_URL} has result ${currentBuild.result}  with error ${err} and build tag ${env.BUILD_TAG}", subject: 'Failure Build done- feb - Test Failed ', to: 'chandertrainingusa@gmail.com'
+        echo "${err}"
+        echo err.getMessage()
+        echo "Caught: ${err}"
+        currentBuild.result = 'FAILURE'
+   // }
+        
+    }
+    
+}
