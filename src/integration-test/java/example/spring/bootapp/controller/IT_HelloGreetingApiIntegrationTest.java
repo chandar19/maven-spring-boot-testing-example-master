@@ -13,6 +13,8 @@ public class IT_HelloGreetingApiIntegrationTest extends IntegrationTestBase
     {
         System.out.println("Integration test chander");
         testUrl = getURLFromString("http://" + hostName + ":" + tomcatPort  + "/hello");
+        System.out.println("Integration test testUrl" + testUrl);
+        System.out.println("Integration test contextPath" + contextPath);
 
         String greetingMessage = with().header(new Header("Content-Type", "application/json; charset=UTF-8"))
                 .expect().log().all()
